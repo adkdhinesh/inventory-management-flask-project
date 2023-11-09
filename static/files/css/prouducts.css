@@ -1,0 +1,157 @@
+table tr td{
+    vertical-align: middle;
+}
+
+td button{
+    margin: 5px;
+	
+}
+
+td button i{
+    font-size: 20px;
+
+}
+thead
+{
+	background:#009879;
+}
+.button
+{
+color:white;
+ background:#009879;
+padding:2px 2px; 
+}
+
+.modal-header{
+    background: #black;
+    color: #fff;
+}
+
+.modal-body form {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0;
+}
+
+.modal-body form .imgholder{
+    width: 200px;
+    height: 200px;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+	border:5px solid black;
+}
+
+.imgholder .upload{
+    position: absolute;
+    bottom: 0;
+    left: 10;
+    width: 100%;
+    height: 100px;
+    background: rgba(0,0,0,0.3);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+	background:black;
+}
+
+.upload i{
+    color: #fff;
+    font-size: 35px;
+}
+
+.imgholder:hover .upload{
+    display: flex;
+}
+
+.imgholder .upload input{
+    display: none;
+}
+
+.modal-body form .inputField{
+    flex-basis: 68%;
+    border-left: 5px groove blue;
+    padding-left: 20px;
+}
+
+form .inputField > div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+form .inputField > div label{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#userForm form .inputField > div label::after{
+    content: "*";
+    color: red;
+}
+
+form .inputField > div input{
+    width: 75%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background: transparent;
+    border-bottom: 2px solid blue;
+}
+
+.modal-footer .submit{
+    font-size: 18px;
+}
+
+
+#readData form .inputField > div input{
+    color: #000;
+    font-size: 18px;
+}
+.btn
+{	
+background:#009879;
+color:black;
+padding:6px 20px;
+border-radius:8px;
+font-size:15px;
+margin:3px 3px;
+margin-bottom:5px;
+}
+.btn:hover{
+	color:white;
+}
+.fa-home:hover
+{
+	color:white;
+}
+.row button
+{
+	text-decoration:black;
+	padding:5px 15px;
+	border-radius:10px;
+	color:black;
+	background:#009879;
+}
+.row a
+{
+	text-decoration:black;
+	padding:7px 16px;
+	border-radius:10px;
+	color:black;
+	background:#009879;
+	border:2px solid black;
+}
+
+.row button:hover
+{
+	color:white;
+}
+.row a:hover
+{
+	color:white;
+}
