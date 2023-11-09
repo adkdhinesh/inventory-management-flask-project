@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700;800&display=swap');
+
+*
+{
+	margin:0;
+	padding:0;
+	outline:0;
+	appearance:none;
+	border:0;
+	text-decoration:block;
+	list-style:none;
+	box-shadow:border-box;
+}
+body{
+	
+	width:100%;
+	height:100vh;
+	font-family:'Poppins', sans-serif;
+	font-size:0.88rem;
+	background-color:#f3f3f3;
+	user-select:none;
+	overflow-x:hidden;
+}
+.warpper
+{
+	display:flex;
+	width:200px;
+	height:200%;
+	background:black;
+}
+.warpper .sidbar
+{
+	padding:30px 0;
+	margin-top:1.4rem;
+	font-size:13px;
+	border-bottom:2px solid rgba(0,0,0,0.05);
+}
+.danger
+{
+	color:#ff7782;
+}
+.warpper .sidbar .logo
+{
+	margin-left:40px;
+	display:flex;
+	gap:1rem;
+	word-spacing:10px;
+	margin-top:-30px;
+	margin-bottom:10px;
+	border-bottom:2px solid rgba(0,0,0,0.05);
+}
+
+ .warpper .sidbar .logo img
+{
+	width:2rem;
+	height:2rem;
+	margin-top:10px;
+	
+}
+.warpper .sidbar .logo h2 
+{
+	font-size:20px;
+	color:#818181;
+	
+	text-transform:uppercase;
+	word-spacing:10px;
+	text-align:center;
+	margin-right:10px;
+	margin-top:10px;
+}
+.sidbar ul li
+{
+	font-size:0.87rem;
+	font-size:13px;
+	
+}
+ .sidbar ul li a
+{
+ 
+  font-size:13px;
+  color: #818181;
+  display:flex;
+	cursor:pointer;  
+  background: none;
+  width:100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+  margin-LEFT:20px;
+}
+.dropdown 
+{
+	font-size:10px;
+}
+.dropdown a {
+  padding: 10px 12px 6px 10px;
+  text-decoration: none;
+  font-size:10px;
+  font-size:10px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width:100%;
+  text-align:right;
+  cursor: pointer;
+  outline: none;
+ 
+}
+.dropdown-btn
+{
+  margin-LEFT:20px;
+  padding: 10px 12px 6px 10px;
+  
+  text-decoration: none;
+  font-size:13px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width:100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+ }
+.dropdown  a:hover, .dropdown-btn:hover {
+ color:blue;
+	margin:0;
+}
+.dropdown  button:hover
+{
+	background-color:white;
+	color:blue;
+
+}
+.dropdown-container {
+  display: none;
+  padding-left:2px;
+}
+.fa-caret-down {
+  float: right;
+	margin-top:5px;
+  padding-right:10px;
+}
+.sidbar ul #il
+{
+	padding-right:7px;
+	margin-top:3.5px;
+	list-style-type:none;
+	
+}
+
+.sidbar ul #i
+{
+	padding-right:7px;
+	margin-top:2px;
+	list-style-type:none;
+}
+.warpper .sidbar ul li a 
+{
+	list-style-type:none;
+	text-decoration:none;
+	margin-right:20px;
+	
+}
+.warpper .sidbar ul li:hover
+{
+	background:white;
+}
+.warpper .sidbar ul li:hover a
+{
+	background:white;
+}
+.recent-orders
+{
+	font-family:'Poppins', sans-serif;
+	border-collapse:collapse;
+	margin:30px 18px;
+	font-size:8px;
+	min-width:150px;
+}
+.recent-orders  thead tr th
+{
+font-size:1.7rem;
+padding:10px 15px;	
+letter-spacing:0.2rem;
+vertical-align:top;
+background-color:#009879;
+border:1px solid #aab7b8;
+}
+.recent-orders tbody tr td
+{
+font-size:1.5rem;
+padding:12px 1.5rem;
+letter-spacing:0.2rem;
+text-align:center;
+font-weight:normal;
+border:1px solid #aab7b8;
+}
+.recent-orders tbody tr
+{
+	border-bottom:1px solid rgba(0,0,0,0.5);
+	
+}
+
+.recent-orders  tr:hover
+{
+	color:black;
+	background-color:rgba(0,0,0,0.10);
+}
+.fa-trash-o
+{
+background:#C70039;
+color:black;
+padding:0.5rem;
+border-radius:6px;
+margin-right:15px;
+}
+.fa-trash-o:hover
+{
+	color:white;
+}
+
+.fa-edit
+{
+background:#009879;
+color:black;
+padding:8px 8px;
+border-radius:6px;
+font-size:15px;
+
+}
+.fa-edit:hover
+{
+	color:white;
+}
+.a
+{
+
+	width:95%;
+	margin:250px 30px;
+	background:white;
+	box-shadow:2px 2px 2px 2px;
+	padding:2px 2px;
+}
+.fa-plus:hover
+{
+	color:white;
+}
+.fa-trash:hover
+{
+	color:white;
+}
+.top
+{
+margin-top:25px;
+background:#009879;
+color:black;
+padding:3px 10px;
+border-radius:2px;
+font-size:15px;
+}
+.top:hover
+{
+	color:white;
+}
+.fa-home
+{
+	
+background:#009879;
+color:black;
+padding:12px 15px;
+border-radius:2px;
+font-size:25px;
+float:right;
+margin:5px 8px;
+margin-RIGHT:1PX;
+margin-bottom:5px;
+}
+.fa-angle-left
+{
+	
+background:#009879;
+color:black;
+padding:12px 15px;
+border-radius:2px;
+font-size:25px;
+float:right;
+margin:5px 8px;
+margin-left:8px;
+margin-bottom:2px;
+}
+
+.fa-home:hover
+{
+	color:white;
+}
+.fa-trash
+{
+background:#C70039;
+color:black;
+padding:8px 8px;
+border-radius:6px;
+font-size:15px;
+	
+}
+.fa-plus
+{
+background:#164863;
+color:black;
+padding:8px 8px;
+border-radius:6px;
+font-size:20px;
+margin-left:15px;	
+}
+
+
+
+.form-popup h2 
+{
+	color:black;
+	margin-top:-30px;
+	margin-bottom:10px;
+}
+.form-popup 
+{
+	margin:0px 50px;
+	color:black;
+	
+}
+
+.row
+{
+	display:block;
+	align-items:center;
+	justify-content:space-between;
+	float:left;
+	margin-left:150px;
+}
+.row1
+{
+	display:block;
+	align-items:center;
+	justify-content:space-between;
+	float:right;	
+}
+.form-group input
+{
+	margin-top:15px;
+	margin-left:50px;
+	width:230px;
+	float:left;
+	border:2px solid black;
+}
+.form-group2 input
+{
+	margin-top:10px;
+	margin-left:100px;
+	width:230px;
+	float:right;
+	border:2px solid black;
+}
+
+.form-group textarea
+{
+	margin-top:50px;
+	margin-left:50px;
+	width:230px;
+	float:left;
+	border:2px solid black;
+}
+.form-group3 input
+{
+background:#009879;
+color:black;
+padding:5px 20px;
+border-radius:2px;
+font-size:15px;
+float:right;
+margin-top:50px;
+margin-right:10px;
+margin-bottom:5px;
+	border:2px solid black;
+}
+.form-group3 input:hover
+{
+	color:white;
+}
+.hand
+{
+	margin-left:100px;
+}
+.recent-orders button
+{
+	margin-top:20px;
+}
