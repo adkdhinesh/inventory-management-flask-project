@@ -32,4 +32,4 @@ The Inventory Management System is designed to help businesses keep track of the
 - **Streamline:** Refers to making inventory management processes more efficient and organized.
 - **Improve:** Suggests making decision-making better, often involving enhancements or optimizations.
 - **Enhance:** Denotes the action of improving or adding value to user productivity and experience.
-- **Ensure:
+
