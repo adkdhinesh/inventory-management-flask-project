@@ -1,0 +1,51 @@
+
+<html>
+<head>
+ <title>Registration</title>
+<link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='myfont/css/all.min.css')}}">
+    <script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+<link rel="stylesheet" href="{{url_for('static',filename='files/css/register.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='files/myfont/css/all.min.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='files/ja/jquery.js')}}">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+   <div class="a">
+   <div class="form-popup" id="myForm">
+                <form class="form-container"  method="POST" action="/register">
+                    <h1><b>Registration</b></h1>
+                    
+                        <label>Name</label>
+                        <input type="text" class="form-control" name="name" required>
+                    
+                        <label>Lest Name</label>
+                        <input class="form-control" name="address" required>
+                    
+                        <label>Contact</label>
+                        <input type="text" class="form-control" name="contact" required>
+                        <label>Password</label>
+                        <input type="text" class="form-control" name="mail" required>
+                    
+                        <input type="submit" class="btn" value="Register">
+                         <a href="{{url_for('index')}}" class="btn">Back to Home</a>
+                    
+                
+                </form>
+                    </div>
+            </div>
+  
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+        $(".alert").hide(2000)
+    });
+</script>
+<script>
+    $(document).ready(function(){
+        $("form").attr("autocomplete","off");
+    });
+</script>

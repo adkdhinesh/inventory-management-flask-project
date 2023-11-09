@@ -1,0 +1,168 @@
+<html>
+<head>
+ 
+<title>Inventory System</title>
+<link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='myfont/css/all.min.css')}}">
+    <script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
+	 <script src="{{url_for('static',filename='cs/script.js')}}"></script>
+    <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+<link rel="stylesheet" href="{{url_for('static',filename='files/css/order.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='files/css/bootstrap.min.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='files/myfont/css/all.min.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='files/ja/jquery.js')}}">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="warpper">
+	<div class="sidbar">
+		<div class="logo">
+			<img src="{{url_for('static',filename='files/images/bg2.png')}}">
+			<h2><b>Ega</b><span class="danger"><b>top</b></span></h2>
+		</div>
+		<ul class="dropdown">
+		<li><a href="{{url_for('home')}}"><i id="il" class="fas fa-qrcode"></i>Dashboard</a></li>
+		<li><a href="item.html"><i id="il" class="fas fa-cubes"></i>item</a></li>
+		<li><a href="catagory.html"><i id="i" class="glyphicon glyphicon-th"></i>Catagory</a></li>
+		<li><a href="warehouse.html"><i id="i" class="fas fa-institution"></i>Warehouse</a></li>
+		<li><a href="attributes.html"><i id="i" class="glyphicon glyphicon-duplicate"></i>Attributes</a></li>
+		<li><a href="prouducts.html"><i id="i" class="fas fa-plus-square"></i>Products</a></li>
+		<button class="dropdown-btn"><i id="i" class="fas fa-dollar"></i>Order 
+		<i class="fa fa-caret-down"></i>
+		</button>
+		<ul class="dropdown-container">
+		<li><a href="order.html"><i id="i" class="fas fa-plus-square"></i>Add Order</a></li>
+		<li><a href="magorder.html"><i id="i" class="fas fa-tasks"></i>Manage Order</a></li>
+		</ul>
+		<li><a href="users_order.html"><i id="i" class="fas fa-pie-chart"></i>OrderUsers</a></li>
+		<li><a href="member.html"><i  id="i" class="fas fa-users"></i>Mambers</a></li>
+		<li><a href="{{url_for('logout')}}"><i id="il"  class="fa fa-sign-out"></i>Logout</a></li>
+		
+	</div>
+    <main>
+<div class="back">	
+	<div class="form-popup" id="myForm">          
+	   <form  method="POST"  action="/addData6">
+                <h2 ><b>Edit Order</b></h2>
+			  <div class="row">    
+			   <div class="form-group">
+                   <input type="text" placeholder="Bill Number" class="form-control" name="number" required>
+                </div>
+				<div class="form-group">
+                    
+                    <input type="text" placeholder="Client Name"class="form-control" name="name" required>
+                </div>
+				
+                <div class="form-group">
+                    
+					
+                    <input class="form-control" placeholder="Client Address" name="address" required>
+                </div>
+		
+				<div class="form-group">
+                    
+                    <input type="number" placeholder="Client Phone"class="form-control" name="contact" required>
+                </div>
+               	</div> 
+				<div class="form-group1">
+					<select placeholder="Product" type="text" class="form-control" name="mail" required>
+					<option>Marbrassa-4 tray Desk File Orgnizer</option>
+					<option>Racer Blacshark V2 x Faming Headset 7.1</option>
+					<option>Arctix Girls Frost Insulated Winter Jecket	</option>
+					<option>Homall Gaming Chair</option>
+					<option>Predutor Holios 300</option>
+					<option>Rubik cube</option>
+					<option>Apple Macbook Air</option>
+					<option>Akienware Auroa R13 Gaming Desktop</option>
+                   
+                </div>	
+				
+				<div class="form-group1">
+                <input type="number1" placeholder="Qut" class="form-control" name="number1" size="10" onchange="Calc(this);"required>
+                </div>
+				</div>
+
+				<div class="form-group1">
+                    <input type="NUMBER" placeholder="Rate" class="form-control" name="mail1" onchange="Calc(this);" required>
+                </div>
+				
+				<div class="form-group4">
+                  
+                    <input type="number" placeholder="Total" class="form-control" name="mail2"    required>
+                </div>
+
+                <div class="form-group5">
+                    <input type="submit"  value="Submit">
+                </div>
+				</div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+
+	function GetPrint()
+{
+    /*For Print*/
+    window.print();
+}
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+<script>
+    $(document).ready(function(){
+        $(".alert").hide(2000)
+    });
+</script>
+<script>
+    $(document).ready(function(){
+        $("form").attr("autocomplete","off");
+    });
+</script>
+<script>
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+
+</script>
+<script>
+function Calc(v)
+{
+    /*Detail Calculation Each Row*/
+    var index = $(v).parent().parent().index();
+    
+    var number1 = document.getElementsByName("number1")[index].value;
+    var mail1 = document.getElementsByName("mail1")[index].value;
+
+    var mail2 = number1 * mail1;
+    document.getElementsByName("mail2")[index].value = mail2;
+
+    GetTotal();
+}
+    $(document).ready(function(){
+        $("form").attr("autocomplete","off");
+    });
+</script>
+		
+
+

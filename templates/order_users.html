@@ -1,0 +1,136 @@
+<html>
+<head>
+ 
+<title>Inventory System</title>
+<link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='myfont/css/all.min.css')}}">
+    <script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
+	 <script src="{{url_for('static',filename='cs/script.js')}}"></script>
+    <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+<link rel="stylesheet" href="{{url_for('static',filename='files/css/order_users.css')}}">
+
+
+<link rel="stylesheet" href="{{url_for('static',filename='files/css/bootstrap.min.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='files/myfont/css/all.min.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='files/ja/jquery.js')}}">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+
+<div class="warpper">
+	<div class="sidbar">
+		<div class="logo">
+			<img src="{{url_for('static',filename='files/images/bg2.png')}}">
+			<h2><b>Ega</b><span class="danger"><b>top</b></span></h2>
+		</div>
+		<ul class="dropdown">
+		<li><a href="#"><i id="il" class="fas fa-qrcode"></i>Dashboard</a></li>
+		<li><a href="item.html"><i id="il" class="fas fa-cubes"></i>item</a></li>
+		<li><a href="catagory.html"><i id="i" class="glyphicon glyphicon-th"></i>Catagory</a></li>
+		<li><a href="warehouse.html"><i id="i" class="fas fa-institution"></i>Warehouse</a></li>
+		<li><a href="attributes.html"><i id="i" class="glyphicon glyphicon-duplicate"></i>Attributes</a></li>
+		<li><a href="prouducts.html"><i id="i" class="fas fa-plus-square"></i>Products</a></li>
+		<button class="dropdown-btn"><i id="i" class="fas fa-dollar"></i>Order 
+		<i class="fa fa-caret-down"></i>
+		</button>
+		<ul class="dropdown-container">
+		<li><a href="order.html"><i id="i" class="fas fa-plus-square"></i>Add Order</a></li>
+		<li><a href="magorder.html"><i id="i" class="fas fa-tasks"></i>Manage Order</a></li>
+		</ul>
+		<li><a href="users_order.html"><i id="i" class="fas fa-pie-chart"></i>OrderUsers</a></li>
+		<li><a href="member.html"><i  id="i" class="fas fa-users"></i>Mambers</a></li>
+		<li><a href="company.html"><i id="i" class="fas fa-tasks"></i>Company</a></li>
+	</div><body>
+    <main>
+	<div >
+
+<div id="myline">
+<h2>Chat</h2>
+
+<canvas id="myChart"></canvas>
+</div>
+</main>
+<div class="right">
+	<div class="top">
+	<button class="menu-bnt">
+	<span class="fa fa-reorder"><span></button>
+	<div class="profile">
+		<div class="info">
+		<p>Ad<b>min</b></p>
+		</div>
+		<div class="profile-photo">
+		<img src="{{url_for('static',filename='files/img/icons.png')}}">
+		</div>
+	</div>
+	</div>
+	
+<div class="sales-analytics">
+<h2>sales Analytics</h2>
+<div class="item online">
+	<div class="icon">
+		<span><i class="fa fa-cart-arrow-down"></i></span>
+	</div>	
+<div class="right">	
+<div class="info">
+		<h3>ONLINE ORDERS</h3>
+<small class="text-muted">2minutes ago</small>
+</div>
+		<h5 class="success">+89%</h5>
+			<h3>3849</h3>
+</div>
+</div>
+<div class="item offline" id="offline">
+	<div class="icon">
+		<span><i class="glyphicon glyphicon-duplicate"></i></span>
+	</div>
+<div class="right">	
+<div class="info">
+		<h3>ONLINE ORDERS</h3>
+<small class="text-muted">2minutes ago</small>
+</div>
+		<h5 class="danger">-19%</h5>
+			<h3>3849</h3>
+</div>
+</div>		
+<div class="item customers" id="offline">
+	<div class="icon">
+		<span><i class="glyphicon glyphicon-duplicate"></i></span>
+	</div>
+<div class="right">	
+<div class="info">
+		<h3>ONLINE ORDERS</h3>
+<small class="text-muted">2minutes ago</small>
+</div>
+		<h5 class="success">+69%</h5>
+			<h3>3849</h3>
+</div>
+</div>
+<div class="item customers" id="offline">
+	<div class="icon">
+		<span><i class="glyphicon glyphicon-duplicate"></i></span>
+	</div>
+<div class="right">	
+<div class="info">
+		<h3>ONLINE ORDERS</h3>
+<small class="text-muted">2minutes ago</small>
+</div>
+		<h5 class="danger">-29%</h5>
+			<h3>3849</h3>
+</div>
+</div>
+<div class="item add-product">
+<div>
+	<span><i class="glyphicon glyphicon-duplicate"></i></span>
+<h3>Add Product</h3>
+</div>
+</div>
+<div class="item add-product">
+<div>
+	<span><i class="glyphicon glyphicon-duplicate"></i></span>
+<h3>Add Product</h3>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script src="{{url_for('static',filename='files/js/main.js')}}"></script>
+<script src="{{url_for('static',filename='files/js/script.js')}}"></script>

@@ -1,0 +1,73 @@
+<html>
+<head>
+ 
+ 
+<title>Inventory System</title>
+<link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='myfont/css/all.min.css')}}">
+    <script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+<link rel="stylesheet" href="{{url_for('static',filename='files/css/order_users.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='files/css/bootstrap.min.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='files/myfont/css/all.min.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='files/ja/jquery.js')}}">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="warpper">
+	<div class="sidbar">
+		<div class="logo">
+			<img src="{{url_for('static',filename='files/images/bg2.png')}}">
+			<h2><b>Ega</b><span class="danger"><b>top</b></span></h2>
+		</div>
+		<ul class="dropdown">
+		<li><a href="{{url_for('home')}}"><i id="il" class="fas fa-qrcode"></i>Dashboard</a></li>
+		<li><a href="item.html"><i id="il" class="fas fa-cubes"></i>item</a></li>
+		<li><a href="catagory.html"><i id="i" class="glyphicon glyphicon-th"></i>Catagory</a></li>
+		<li><a href="warehouse.html"><i id="i" class="fas fa-institution"></i>Warehouse</a></li>
+		<li><a href="attributes.html"><i id="i" class="glyphicon glyphicon-duplicate"></i>Attributes</a></li>
+		<li><a href="prouducts.html"><i id="i" class="fas fa-plus-square"></i>Products</a></li>
+		<button class="dropdown-btn"><i id="i" class="fas fa-dollar"></i>Order 
+		<i class="fa fa-caret-down"></i>
+		</button>
+		<ul class="dropdown-container">
+		<li><a href="order.html"><i id="i" class="fas fa-plus-square"></i>Add Order</a></li>
+		<li><a href="magorder.html"><i id="i" class="fas fa-tasks"></i>Manage Order</a></li>
+		</ul>
+		<li><a href="users_order.html"><i id="i" class="fas fa-pie-chart"></i>OrderUsers</a></li>
+		<li><a href="member.html"><i  id="i" class="fas fa-users"></i>Mambers</a></li>
+		<li><a href="{{url_for('logout')}}"><i id="il"  class="fa fa-sign-out"></i>Logout</a></li>
+		
+	</div>
+<main>
+
+<div id="myline">
+<h2>Order Users Report</h2>
+<canvas id="myChart1" ></canvas>
+ 
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script src="{{url_for('static',filename='files/js/main1.js')}}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+<script>
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+
+</script>

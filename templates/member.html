@@ -1,0 +1,152 @@
+<html>
+<head>
+ 
+<title>Inventory System</title>
+<link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='myfont/css/all.min.css')}}">
+    <script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+<link rel="stylesheet" href="{{url_for('static',filename='files/css/member.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='files/css/bootstrap.min.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='files/myfont/css/all.min.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='files/ja/jquery.js')}}">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+	<div >
+		
+		<h2 class="hand"><b>Manage Catagory</b></h2>
+        <div class="form-popup" id="myForm">
+             <form method="POST" action="/addData7">
+                
+                <div class="row">
+				<div class="form-group">
+                    
+                    <input type="text"  placeholder="Name" class="form-control" name="name" required>
+                </div>
+                <div class="form-group">
+                    
+                    <input class="form-control" placeholder="Address" name="address" required></input>
+                </div>
+                <div class="form-group">
+                    
+                    <input type="text" class="form-control" placeholder="Contact" name="contact" required>
+                </div>
+				</div>
+				<div class="row">
+                <div class="form-group2">
+                    
+                    <input type="text" class="form-control" name="mail" placeholder="Mail" required>
+                </div>
+				<div class="form-group2">
+                    
+                    <input type="text" class="form-control" placeholder="Permission" name="mail1" required>
+                </div>
+                <div class="form-group3">
+                    <input type="submit"  value="Submit">
+                </div>
+				</div>
+            </form>
+        </div>
+    
+        </div> 
+<div class="a">
+  <div class="recent-orders">
+	<a href="{{url_for('home')}}"> <i style="font-size:18px" class="fa fa-home"></i></a>
+	
+	<button class="top">Copy</button>
+				<button class="top">CSV</button>  
+				<button class="top">Excel</button> 
+				<button onclick="GetPrint()" class="top">Print</button> 		 
+        <table>
+			{% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category,message in messages %}
+                        <div class="alert alert-{{category}}">{{message}}</div>
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
+            
+           <thead>
+                    <tr>
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Contact</th>
+                    <th>Mail</th>
+					<th>Permission</th>
+                    <th colspan="2">Active</th>
+                    
+                </tr>
+                </thead>
+                <tbody>
+                    {% for res in data %}
+                        {% set i=loop.index %}
+                    <tr>
+                        <td>{{i}}</td>
+                        <td>{{res["name"]}}</td>
+                        <td>{{res["address"]}}</td>
+                        <td>{{res["contact"]}}</td>
+                        <td>{{res["mail"]}}</td>
+						<td>{{res["mail1"]}}</td>
+                        <td style="text-align:center"><a href="{{url_for('member_record',id=res['pid'])}} " class=" fa fa-edit"></a></td>
+                        <td style="text-align:center"><a href="{{url_for('delete_record7',id=res['pid'])}} " class="fa fa-trash"></a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+	</div>
+	</main>
+</body>
+</html>
+<script>
+
+	function GetPrint()
+{
+    /*For Print*/
+    window.print();
+}
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+<script>
+    $(document).ready(function(){
+        $(".alert").hide(2000)
+    });
+</script>
+<script>
+    $(document).ready(function(){
+        $("form").attr("autocomplete","off");
+    });
+</script>
+<script>
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+
+</script>
+
+		
+
+

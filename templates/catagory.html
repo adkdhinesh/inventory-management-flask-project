@@ -1,0 +1,163 @@
+<html>
+<head>
+ 
+<title>Inventory System</title>
+<link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='myfont/css/all.min.css')}}">
+    <script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+<link rel="stylesheet" href="{{url_for('static',filename='files/css/catagory.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='files/css/bootstrap.min.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='files/myfont/css/all.min.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='files/ja/jquery.js')}}">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="warpper">
+	<div class="sidbar">
+		<div class="logo">
+			<img src="{{url_for('static',filename='files/images/bg2.png')}}">
+			<h2><b>Ega</b><span class="danger"><b>top</b></span></h2>
+		</div>
+		<ul class="dropdown">
+		<li><a href="{{url_for('home')}}"><i id="il" class="fas fa-qrcode"></i>Dashboard</a></li>
+		<li><a href="item.html"><i id="il" class="fas fa-cubes"></i>item</a></li>
+		<li><a href="catagory.html"><i id="i" class="glyphicon glyphicon-th"></i>Catagory</a></li>
+		<li><a href="warehouse.html"><i id="i" class="fas fa-institution"></i>Warehouse</a></li>
+		<li><a href="attributes.html"><i id="i" class="glyphicon glyphicon-duplicate"></i>Attributes</a></li>
+		<li><a href="prouducts.html"><i id="i" class="fas fa-plus-square"></i>Products</a></li>
+		<button class="dropdown-btn"><i id="i" class="fas fa-dollar"></i>Order 
+		<i class="fa fa-caret-down"></i>
+		</button>
+		<ul class="dropdown-container">
+		<li><a href="order.html"><i id="i" class="fas fa-plus-square"></i>Add Order</a></li>
+		<li><a href="magorder.html"><i id="i" class="fas fa-tasks"></i>Manage Order</a></li>
+		</ul>
+		<li><a href="users_order.html"><i id="i" class="fas fa-pie-chart"></i>OrderUsers</a></li>
+		<li><a href="member.html"><i  id="i" class="fas fa-users"></i>Mambers</a></li>
+		<li><a href="{{url_for('logout')}}"><i id="il"  class="fa fa-sign-out"></i>Logout</a></li></div><body>
+    <main>
+	<div >
+		<button class="open-button" onclick="openForm()">Add Catagory</button>
+		<h2 class="hand"><b>Manage Catagory</b></h2>
+        <div class="form-popup" id="myForm">
+				
+		   
+		
+			{% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category,message in messages %}
+                        <div class="alert alert-{{category}}">{{message}}</div>
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
+            <form class="form-container" id="myfrom" method="POST" action="/addData1">
+                <h2><b>Total Catagory</b></h2>
+                  <label for="email"><b>Catagory Name</b></label>
+                    <input type="text" class="form-control" name="name" required>
+					<label><b>Status</b></label>
+                   <select  name="address" required class="form-control" >
+					<option > active</option>
+					<option> unactive</option>
+					</select>
+				
+					<input class="btn cancel" onclick="closeForm()" type="submit"  value="Submit">
+					</form>
+                
+            </form>
+        </div> 
+<div class="a">
+  <div class="recent-orders">
+	<a href="{{url_for('home')}}"> <i style="font-size:18px" class="fa fa-home"></i></a>
+				   <button class="top">Copy</button>
+				<button class="top">CSV</button>  
+				<button class="top">Excel</button> 
+				<button onclick="GetPrint()" class="top">Print</button> 		 
+        <table>
+			{% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category,message in messages %}
+                        <div class="alert alert-{{category}}">{{message}}</div>
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
+            
+           <thead>
+				<tr>
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>Status</th>
+					<th colspan="2">Action</th>
+                    
+                    {% for res in data %}
+                        {% set i=loop.index %}
+                    </tr>
+			</thead>
+					<tbody>
+                        <tr>    
+						<td>{{i}}</td>
+                        <td>{{res["name"]}}</td>
+                        <td style="text-align:center" >{{res["address"]}}</td>
+						<td style="text-align:center"><a href="{{url_for('catagory_update',id=res['pid'])}}" class=" fa fa-edit" ></a></td>
+                        <td style="text-align:center"><a href="{{url_for('delete_record1',id=res['pid'])}} " class="fa fa-trash" ></a></td>
+						
+                    </tr>
+                    {% endfor %}
+                </tbody>
+			</table>
+       
+		</div>
+
+</div>
+	</div>
+	</main>
+</body>
+</html>
+<script>
+
+	function GetPrint()
+{
+    /*For Print*/
+    window.print();
+}
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+<script>
+    $(document).ready(function(){
+        $(".alert").hide(2000)
+    });
+</script>
+<script>
+    $(document).ready(function(){
+        $("form").attr("autocomplete","off");
+    });
+</script>
+<script>
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+
+</script>
+
+		
+
+

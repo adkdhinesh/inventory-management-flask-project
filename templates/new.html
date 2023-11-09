@@ -1,0 +1,127 @@
+<html>
+<head>
+ 
+<title>Inventory System</title>
+<link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='myfont/css/all.min.css')}}">
+    <script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+<link rel="stylesheet" href="{{url_for('static',filename='files/css/item.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='files/css/bootstrap.min.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='files/ja/jquery.js')}}">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="warpper">
+	<div class="sidbar">
+		<div class="logo">
+			<img src="{{url_for('static',filename='files/img/icons.png')}}">
+			<h2><b>Ega</b><span class="danger"><b>top</b></span></h2>
+		</div>
+		<ul class="dropdown">
+		<li><a href="#"><i id="il" class="fas fa-qrcode"></i>Dashboard</a></li>
+		<li><a href="item.html"><i id="il" class="fas fa-cubes"></i>item</a></li>
+		<li><a href="catagory.html"><i id="i" class="glyphicon glyphicon-th"></i>Catagory</a></li>
+		<li><a href="#"><i id="i" class="fas fa-institution"></i>Warehouse</a></li>
+		<li><a href="attributes.html"><i id="i" class="glyphicon glyphicon-duplicate"></i>Attributes</a></li>
+		<button class="dropdown-btn"><i id="il" class="fa fa-dropbox"></i>Products 
+		<i class="fa fa-caret-down"></i>
+		</button>
+		<ul class="dropdown-container">
+		<li><a href="#"><i id="i" class="fas fa-plus-square"></i>Add Products</a></li>
+		<li><a href="#" ><i id="i" class="fas fa-tasks"></i>Manage Products</a></li>
+		</ul>
+		<button class="dropdown-btn"><i id="i" class="fas fa-dollar"></i>Order 
+		<i class="fa fa-caret-down"></i>
+		</button>
+		<ul class="dropdown-container">
+		<li><a href="#"><i id="i" class="fas fa-plus-square"></i>Add Order</a></li>
+		<li><a href="#" ><i id="i" class="fas fa-tasks"></i>Manage Order</a></li>
+		</ul>
+		<li><a href="#"><i id="i" class="fas fa-pie-chart"></i>OrderUsers</a></li>
+		<button class="dropdown-btn"><i  id="i" class="fas fa-users"></i>Mambers</a> 
+		<i class="fa fa-caret-down"></i>
+		</button>
+		<ul class="dropdown-container">
+		<li><a href="#"><i  id="i" class="fas fa-plus-square"></i>Add Mambers</a></li>
+		<li><a href="#"><i id="i" class="fas fa-tasks"></i>Manage Mambers </a></li>
+		</ul>
+		<button class="dropdown-btn"><i id="i" class="fas fa-fingerprint"></i>Permission</a> 
+		<i class="fa fa-caret-down"></i>
+		</button>
+		<ul class="dropdown-container">
+		<li><a href="#"><i id="i" class="fas fa-plus-square"></i>Add Permission</a></li>
+		<li><a href="#"><i id="i" class="fas fa-tasks"></i>Manage Permission</a></li>
+		</ul>
+	</div>
+        <main>
+		
+		<div class="regfrom">
+			{% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category,message in messages %}
+                        <div class="alert alert-{{category}}">{{message}}</div>
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
+            <form class="from-popup" id="myfrom" method="POST" action="/addData">
+                <h2>TOTAL ITEM</h2>
+                  <div class="input" >
+                    <label>Add Item</label>
+                    <input type="text" name="name" required>
+					</div>
+					<div class="input">
+					<label >Status</label>
+                    <select  multiple required>
+					<option value="value1" >Active</option>
+					<option  value="value2"> Inactive</option>
+					</select>
+                    <div class="input1" >
+					<input class="btn btn-primary" type="submit"  value="Submit">
+					</div>
+                </div>
+            </form>
+        </div>
+  <div class="recent-orders">
+	<div method="POST" action="/view_record">
+            <h2>View Record</h2>
+            <table action="/view_record">
+                <tbody>
+				<div class="a">
+                <a href="{{url_for('home')}}" class="btn btn-warning pull-right">Home Page</a>
+            </div>
+				<tr>
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                    {% for res in data %}
+                        {% set i=loop.index %}
+                    <tr>
+                        <td>{{i}}</td>
+                        <td>{{res["name"]}}</td>
+                        <td style="text-align:center" class="btn btn-primary">{{res["address"]}}</td>
+						<td style="text-align:center"><a href="{{url_for('update_record',id=res['pid'])}} " class="btn btn-primary">Update</a></td>
+                        <td style="text-align:center"><a href="{{url_for('delete_record',id=res['pid'])}} " class="btn btn-danger">Delete</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+		</div>
+	</main>
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+        $(".alert").hide(3000)
+    });
+</script>
+<script>
+    $(document).ready(function(){
+        $("form").attr("autocomplete","off");
+    });
+</script>
