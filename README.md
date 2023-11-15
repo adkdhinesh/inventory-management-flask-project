@@ -1,4 +1,4 @@
-![logo](https://github.com/adkdhinesh/adkdhinesh/blob/main/20231110_215501.jpg)
+
 # Inventory Management System
 
 The Inventory Management System is designed to help businesses keep track of their products, manage stock levels, and streamline the inventory control process. Built using Flask, a Python web framework, the system provides a user-friendly interface for easy product management and reporting.
